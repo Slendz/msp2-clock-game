@@ -1,0 +1,36 @@
+/* --------- Global Style */
+body {
+    background-color: white;
+    font-family: "Raleway", sans-serif;
+    text-align: center;
+}
+
+h1, h2{
+    color: #94ebcd
+}
+/* --------- Heading */
+.header {
+    margin: auto;
+}
+
+/* --------- Sidebar */
+.side-bar{
+    color: #94ebcd
+    
+}
+
+/* --------- Title */
+
+hr {
+    height: 2px;
+    width: 60%;
+    color: #ffefa1
+}
+
+/* --------- Clock */
+.clock-area {
+    position: absolute;
+}
+
+
+/* --------- Answers */
