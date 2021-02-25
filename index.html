@@ -5,30 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="asset/style.css" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <title>Clock Game</title>
 </head>
 <body>
-    <!--Question Number-->
-    <ul sidebar class="side-bar">
-        <li>
-            <button>
-
-            </button>
-        </li>
-    </ul>
+    <!--Sidebar Question Numbers-->
+    <section> 
+        <div class="row">
+            <div class="col-4 bg-color-question-number sidebar">
+                <ul class="list-group">
+                    <h3 class="list-group-item" >1</h3>
+                    <h3 class="list-group-item" >2</h3>
+                    <h3 class="list-group-item" >3</h3>
+                    <h3 class="list-group-item" >4</h3>
+                    <h3 class="list-group-item" >5</h3>
+                    <h3 class="list-group-item" >6</h3>
+                    <h3 class="list-group-item" >7</h3>
+                    <h3 class="list-group-item" >8</h3>
+                    <h3 class="list-group-item" >9</h3>
+                    <h3 class="list-group-item" >10</h3>
+                </ul>
+            </div>
+    
+     
     <!--Title-->
-    <div class="title">
-        <h1>of 10 - Can you match the correct line</h1>
+            <div class="col-8">
+                <h1>of 10 - Can you match the correct line</h1>
 
-        <hr>
-    </div>
-    <!--Game name title-->
-    <h2 class="heading"><i class="far fa-clock"></i> What's the time?</h2>
+                <hr>
+            </div>
+        </div>    
+    </section>
+    <!--Game name-->
+    <section class="container">
+        <div class="row">
+            <div class="col">
+                <h2 class="heading"><i class="far fa-clock"></i> What's the time?</h2>
+            </div>
+        </div>
+    </section>    
     <!--Where the analogue clock displays-->
-    <div class="clock-area">
-        <img src="asset/images/clock/clock.png">
-    </div>
+    <section class="container">
+        <div class="row justify-content-center">
+            <div class="col">
+                <div class="text-center">
+                    <img src="asset/images/clock/clock.png" class="rounded" alt="clock">
+                </div>
+             </div>
+        </div>
+    </section>
     <!--Where the multiply choice answers are displayed-->
-    <div class="answer-area"></div>
+    <section class="container">
+        <div class="row">
+            <div class="col">
+                <div class="answer-area">
+                    
+                </div>
+            </div>
+        </div>
+    </section>    
 </body>
 </html>

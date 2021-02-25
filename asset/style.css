@@ -2,7 +2,6 @@
 body {
     background-color: white;
     font-family: "Raleway", sans-serif;
-    text-align: center;
 }
 
 h1, h2{
@@ -14,23 +13,36 @@ h1, h2{
 }
 
 /* --------- Sidebar */
-.side-bar{
-    color: #94ebcd
-    
+.sidebar{
+    color: #94ebcd;
+    display: table-cell;
+    padding: 0 30px 30px;
+    float: none;
+}
+
+.bg-color-question-number {
+    background-color: #94ebcd;
+}
+
+.list-group-item-success {
+    color: #ffefa1
+}
+
+.numbers {
+    font-weight: 300;
+    margin-top: 25px;
+    margin-bottom: 40px;    
 }
 
 /* --------- Title */
 
 hr {
     height: 2px;
-    width: 60%;
+    width: 80%;
     color: #ffefa1
 }
 
 /* --------- Clock */
-.clock-area {
-    position: absolute;
-}
 
 
 /* --------- Answers */
