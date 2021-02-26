@@ -8,24 +8,35 @@ h1, h2{
     color: #94ebcd
 }
 /* --------- Heading */
-.header {
-    margin: auto;
+.heading {
+    margin: 100px 50px 100px 50px;
 }
 
 /* --------- Sidebar */
 .sidebar{
-    color: #94ebcd;
+    background-color: #94ebcd;
     display: table-cell;
     padding: 0 30px 30px;
     float: none;
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: auto;
+    width: 130px;
+    min-width: 130px;
+    text-align: center;
 }
+
 
 .bg-color-question-number {
     background-color: #94ebcd;
 }
 
-.list-group-item-success {
-    color: #ffefa1
+.list-number{
+    color: #ffefa1;
+    padding: 1rem 0 1rem 0;
 }
 
 .numbers {
@@ -35,13 +46,16 @@ h1, h2{
 }
 
 /* --------- Title */
-
-hr {
-    height: 2px;
-    width: 80%;
-    color: #ffefa1
+#title {
+    margin: 14px 50px 0 50px;
+    overflow: hidden;
+    border-bottom: 2px solid #ffcb91;
 }
 
+.question-number {
+    color: #aaaaaa;
+
+}
 /* --------- Clock */
 
 
