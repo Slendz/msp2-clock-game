@@ -1,7 +1,9 @@
 /* --------- Global Style */
+@import url("https://fonts.googleapis.com/css2?family=Sniglet&family=Fredoka+One&display=swap");
+
 body {
     background-color: white;
-    font-family: "Raleway", sans-serif;
+    font-family: "Sniglet", sans-serif;
 }
 
 h1, h2{
@@ -9,25 +11,12 @@ h1, h2{
 }
 /* --------- Heading */
 .heading {
-    margin: 100px 50px 100px 50px;
+    margin: 4rem 0 2rem 4rem;
+    padding: 2rem;
 }
 
-/* --------- Sidebar */
-.sidebar{
-    background-color: #94ebcd;
-    display: table-cell;
-    padding: 0 30px 30px;
-    float: none;
-    display: flex;
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-direction: column;
-    height: 100%;
-    overflow-y: auto;
-    width: 130px;
-    min-width: 130px;
-    text-align: center;
-}
+/* --------- Question Bar */
+
 
 
 .bg-color-question-number {
@@ -36,7 +25,7 @@ h1, h2{
 
 .list-number{
     color: #ffefa1;
-    padding: 1rem 0 1rem 0;
+    padding: .5rem .25rem !important;
 }
 
 .numbers {
@@ -56,7 +45,39 @@ h1, h2{
     color: #aaaaaa;
 
 }
-/* --------- Clock */
 
+/* --------- Clock */
+.analogue-clock {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
 
 /* --------- Answers */
+.bottom-row-option {
+    background-color: #94ebcd;
+}
+
+
+/* --------- Button */
+.button {
+  background-color: #94ebcd;
+  border: none;
+  color: #ffefa1;
+  padding: 1rem 2rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.1rem;
+  border-radius: 0.5rem;
+}
+
+.button:hover {
+  background-color: #6ddccf;
+  color: #ffefa1;
+}
+
+.button {
+  transition-duration: 0.4s;
+}
