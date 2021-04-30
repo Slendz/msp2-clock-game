@@ -1,0 +1,169 @@
+/* --------- Global Style */
+@import url("https://fonts.googleapis.com/css2?family=Sniglet&family=Fredoka+One&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+
+body {
+    background-color: white;
+    font-family: "Sniglet", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+h1, h2{
+    color: #94ebcd
+}
+/* --------- Heading */
+.heading {
+    margin: 4rem 0 2rem 4rem;
+    padding: 2rem;
+}
+
+/* --------- Question Bar */
+
+
+
+.bg-color-question-number {
+    background-color: #94ebcd;
+}
+
+.list-number{
+    color: #ffefa1;
+    padding: .5rem .25rem !important;
+}
+
+.numbers {
+    font-weight: 300;
+    margin-top: 25px;
+    margin-bottom: 40px;    
+}
+
+/* --------- Title */
+#title {
+    margin: 14px 50px 0 50px;
+    overflow: hidden;
+    border-bottom: 2px solid #ffcb91;
+}
+
+.question-number {
+    color: #aaaaaa;
+
+}
+
+/* --------- Clock */
+
+/*.clock {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}*/
+
+.clock {
+    width: 375px;
+    height: 375px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../images/clock/colorfulclock.png");
+    background-size: cover;
+    border: 4px;
+    border-radius: 50%;
+}
+
+/* The small circle in the center */
+.clock:before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: rgb(0, 0, 0);
+    border-radius: 50%;
+
+    /* The z-index property specifies the stack order of an element.
+    /* An element with greater stack order is always in front of an element with a lower stack order.  */
+    /* Note: z-index only works on positioned elements (position: absolute, position: relative, position: fixed, or position: sticky). */
+    z-index: 10000;
+    /* kept as a high value, since wanted at top */
+}
+
+body.light .clock:before {
+    background: #1a74be;
+}
+
+
+.clock .hour,
+.clock .min {
+    position: absolute;
+}
+
+/* length of respective arms; */
+.clock .hour, .hr {
+    width: 160px;
+    height: 160px;
+} 
+
+.clock .min, .mn {
+    width: 190px;
+    height: 190px;
+}
+
+.hr, .mn {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    position: absolute;
+    border-radius: 50%;
+    
+}
+
+.hr:before {
+    content: '';
+    position: absolute;
+    width: 7.5px;
+    height: 80px;
+    background: #f81460;
+    z-index: 10;
+    /* z-index least */
+    border-radius: 2.8px;
+}
+
+.mn:before {
+    content: '';
+    position: absolute;
+    width: 3.5px;
+    height: 100px;
+    background: #000000;
+    z-index: 11;
+    /* z-index more than hour hand */
+    border-radius: 3px;
+}
+
+/* --------- Answers */
+.bottom-row-option {
+    background-color: #94ebcd;
+}
+
+
+/* --------- Button */
+.button {
+  background-color: #94ebcd;
+  border: none;
+  color: #ffefa1;
+  padding: 1rem 2rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.1rem;
+  border-radius: 0.5rem;
+}
+
+.button:hover {
+  background-color: #6ddccf;
+  color: #ffefa1;
+}
+
+.button {
+  transition-duration: 0.4s;
+}
+
