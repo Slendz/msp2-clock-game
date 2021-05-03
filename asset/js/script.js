@@ -1,6 +1,20 @@
+for (i = 0; i < 10; i++){
+    document.getElementsByClassName('question-number');
+}
+
 let correctTime; // Selected from the 4 randomly generated times
 let timeChoices = []; // 4 Randomly generated times
 function submitBtnCallback(){
+    for (let button of buttons) {
+    button.addEventListener("click", function() {
+        if (this.getAttribute("data-type") === "submit") {
+          checkAnswer();
+        } else {
+          let gameType = this.getAttribute("data-type");
+          runGame(gameType);
+        }
+    });
+  }
     // Select the time that the user selected (from the options)
     // Check if the time selected by the user matches the one stored in the "correct time variable"
     // If yes increase the score, if no do something...
