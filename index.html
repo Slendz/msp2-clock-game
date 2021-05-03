@@ -4,76 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link rel="stylesheet" href="asset/style.css" type="text/css">
+    <link rel="stylesheet" href="asset//css/style.css" type="text/css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <title>Clock Game</title>
 </head>
 <body>
-    <!--Question Numbers-->
-    <nav class="navbar sticky-top bg-color-question-number list-number text-center">
-        <span class="navbar-brand mb-0 px-5 h1">1</span>
-        <span class="navbar-brand mb-0 px-5 h1">2</span>
-        <span class="navbar-brand mb-0 px-5 h1">3</span>
-        <span class="navbar-brand mb-0 px-5 h1">4</span>
-        <span class="navbar-brand mb-0 px-5 h1">5</span>
-        <span class="navbar-brand mb-0 px-5 h1">6</span>
-        <span class="navbar-brand mb-0 px-5 h1">7</span>
-        <span class="navbar-brand mb-0 px-5 h1">8</span>
-        <span class="navbar-brand mb-0 px-5 h1">9</span>
-        <span class="navbar-brand mb-0 px-5 h1">10</span>
-    </nav>
-    
-    <div class="container-fluid complete-area">
-        <!--Title-->
-        <div class="col">
-            <div id="title">
-                <h1><span class="question-number">of 10 - </span>Can You Match The Correct Time?</h1>
-            </div>   
-            
-            <!--Game Objective-->
+    <!--Question Game Answer Area-->
+    <div class="container">
+        <!--Questions & Score Section-->
+        <div class="container">
+            <div class="row">
+                <div class="col" id="title">
+                        <h1><span class="question-number"> of 10 - </span>Can You Match The Correct Time?</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col" id="score">
+                    <h2 class="score-heading">Score:</h2> 
+                </div>
+            </div>
+        </div>
+        
+        <!--Game Area-->
+        <div class="container">    
             <div class="row">
                 <div class="col">
                     <h2 class="heading"><i class="far fa-clock"></i> Select the correct time?</h2>
                 </div>
-            </div>    
-            <!--Where the analogue clock displays-->
+            </div>
+
+            <!--Where the analogue clock displays (Clock Section)-->
             <div class="row">
-                <div class="time">
-                    <div class="col">
-                        <div class="center">
-                            <!-- ngRepeat: item in hourPosition -->
-                            <span ng-repeat="item in hourPosition" id="1" size="22,26" position="359,72" value="120" 
-                            style="z-index: 999; width: 22px; height: 26px; position: absolute; left: 359px; top: 72px;" class=""></span>
-                            <span ng-repeat="item in hourPosition" id="2" size="22,26" position="436,143" value="150" 
-                            style="z-index: 999; width: 22px; height: 26px; position: absolute; left: 436px; top: 143px;" class=""></span>
-                            <span ng-repeat="item in hourPosition" id="3" size="22,26" position="462,245" value="180" 
-                            style="z-index: 999; width: 22px; height: 26px; position: absolute; left: 462px; top: 245px;" class=""></span>
-                            <span ng-repeat="item in hourPosition" id="4" size="22,26" position="437,346" value="210" 
-                            style="z-index: 999; width: 22px; height: 26px; position: absolute; left: 437px; top: 346px;" class=""></span>
-                            <span ng-repeat="item in hourPosition" id="5" size="22,26" position="361,419" value="240" 
-                            style="z-index: 999; width: 22px; height: 26px; position: absolute; left: 361px; top: 419px;" class=""></span>
-                            <span ng-repeat="item in hourPosition" id="6" size="22,26" position="261,445" value="270" 
-                            style="z-index: 999; width: 22px; height: 26px; position: absolute; left: 261px; top: 445px;" class=""></span>
-                            <span ng-repeat="item in hourPosition" id="7" size="22,26" position="160,419" value="300" 
-                            style="z-index: 999; width: 22px; height: 26px; position: absolute; left: 160px; top: 419px;" class=""></span>
-                            <span ng-repeat="item in hourPosition" id="8" size="22,26" position="85,343" value="330" 
-                            style="z-index: 999; width: 22px; height: 26px; position: absolute; left: 85px; top: 343px;" class=""></span>
-                            <span ng-repeat="item in hourPosition" id="9" size="22,26" position="58,245" value="360" 
-                            style="z-index: 999; width: 22px; height: 26px; position: absolute; left: 58px; top: 245px;" class=""></span>
-                            <span ng-repeat="item in hourPosition" id="10" size="22,26" position="86,147" value="390" 
-                            style="z-index: 999; width: 22px; height: 26px; position: absolute; left: 86px; top: 147px;" class=""></span>
-                            <span ng-repeat="item in hourPosition" id="11" size="22,26" position="161,72" value="0" 
-                            style="z-index: 999; width: 22px; height: 26px; position: absolute; left: 161px; top: 72px;" class=""></span>
-                            <span ng-repeat="item in hourPosition" id="12" size="22,26" position="261,45" value="90" 
-                            style="z-index: 999; width: 22px; height: 26px; position: absolute; left: 261px; top: 45px;" class=""></span>
-                            <!-- end ngRepeat: item in hourPosition -->
-                            <img src="asset/images/clock/clock.png" class="rounded analogue-clock" alt="clock">
+                <div class="col">
+                    <div class="center">
+                        <div class="clock">
+                            <div class="hour">
+                                <div class="hr" id="hr" style="transform: rotateZ(350deg);">                                    
+                                </div>
+                            </div>
+                            <div class="min">
+                                <div class="mn" id="mn" style="transform: rotateZ(240deg);">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!--Where the multiply choice answers are displayed-->
-            <div class="answer-area">
+
+            <!--Where the multiply choice answers are displayed (Answer Section)-->
+            <div class="row answer-area">
                 <div class="col mx-5" id="answers">
                     <div class="row top-row-option text-justify mx-5 my-5">
                         <div class="col-6">
@@ -96,7 +75,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>     
+        </div>    
+    </div>    
 </body>
 </html>
