@@ -1,81 +1,224 @@
-for (i = 0; i < 10; i++){
-    document.getElementsByClassName('question-number');
+var currentNum = 1;
+var score = 0;
+var currentHour = 0;
+var currentMin = 0;
+var selectedAnswer = 0;
+var correctAnswer = 0;
+
+function initialGame() {
+  currentNum = 1;
+  score = 0;
+  currentHour = 0;
+  currentMin = 0;
+  selectedAnswer = 0;
+  correctAnswer = 0;
 }
 
-let correctTime; // Selected from the 4 randomly generated times
-let timeChoices = []; // 4 Randomly generated times
-function submitBtnCallback(){
-    for (let button of buttons) {
-    button.addEventListener("click", function() {
-        if (this.getAttribute("data-type") === "submit") {
-          checkAnswer();
-        } else {
-          let gameType = this.getAttribute("data-type");
-          runGame(gameType);
-        }
-    });
+function endGame() {
+  initialGame();
+  var mainPanel = document.getElementById("mainPanel");
+  var gamePanel = document.getElementById("gamePanel");
+  gamePanel.className += " hidden";
+  mainPanel.className = mainPanel.className.replace("hidden", "");
+  $('.close-modal').click();
+}
+
+function restart(){
+  initialGame();
+  start();
+  $('.close-modal').click();
+}
+
+function setAnswer(val) {
+  selectedAnswer = val;
+}
+
+function start() {
+  var mainPanel = document.getElementById("mainPanel");
+  var gamePanel = document.getElementById("gamePanel");
+  var hours = Math.floor(Math.random() * 12) + 1;
+  var minutes = Math.floor(Math.random() * 12) + 1;
+
+  currentHour = hours;
+  currentMin = minutes * 5;
+  document.getElementById("score").innerHTML = score;
+  document.getElementById("currentNum").innerHTML = currentNum;
+  updateClock(hours, minutes * 5);
+  makeAnswerBtn(hours, minutes * 5);
+  mainPanel.className += " hidden";
+  gamePanel.className = gamePanel.className.replace("hidden", "");
+  
+}
+
+function updateClock(hours, minutes) {
+
+  var hourDegrees = hours * 30;
+  var minuteDegrees = minutes * 6;
+  hourDegrees += (360 / 12 / 60) * minutes;
+  $('.hour-hand').css({
+    'transform': `rotate(${hourDegrees}deg)`
+  });
+
+  $('.minute-hand').css({
+    'transform': `rotate(${minuteDegrees}deg)`
+  });
+
+}
+
+function makeAnswerBtn(hr, min) {
+  var ansBtn = "";
+  if (min == 60) {
+    min = 0;
+    hr++;
   }
-    // Select the time that the user selected (from the options)
-    // Check if the time selected by the user matches the one stored in the "correct time variable"
-    // If yes increase the score, if no do something...
+  const rbs = document.querySelectorAll('input[name="budget"]');
+  for (const rb of rbs) {
+    rb.checked = false;
+  }
+  var cHours = hr < 10 ? "0" + hr : hr;
+  var cMinutes = min < 10 ? "0" + min : min;
+  var secCorrectAnswer = Math.floor(Math.random() * 4) + 1;
+  correctAnswer = secCorrectAnswer;
+  for (var i = 1; i <= 4; i++) {
+    ansBtn = document.getElementById("budget-" + i + "-span");
+    if (secCorrectAnswer == i) {
+      ansBtn.innerHTML = cHours + " : " + cMinutes;
+      ansBtn.setAttribute("data-hover", cHours + " : " + cMinutes);
+    } else {
+      var hours = Math.floor(Math.random() * 12) + 1;
+      var minutes = Math.floor(Math.random() * 12) + 1;
+      minutes = minutes * 5;
+      ansBtn.innerHTML = hours + " : " + minutes;
+      ansBtn.setAttribute("data-hover", hours + " : " + minutes);
+    }
+  }
+}
 
-    // Generate 4 times which will be displayed
-    timeChoices = ["12:00", "10:00", "11:00", "09:00"]; // Randomly generated generateRandomTimes
-    // Assign one time which is the correct time
-    correctTime = "10:00" // Randomly selected
-    // Display time depends on the API of the clock
-    setClockTime();
+function animateValue(obj, start, end, duration) {
+  startTimestamp = null;
+  const  step = (timestamp) => {
+  if (!startTimestamp) startTimestamp = timestamp;
+  const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+  obj.innerHTML = Math.floor(progress * (end - start) + start);
+  if (progress < 1) {
+    window.requestAnimationFrame(step);
+  }
+};
+window.requestAnimationFrame(step);
 }
-//The clock that is displayed
-function toggleClass() {
-    const body = document.querySelector('body');
-    body.classList.toggle('light');
-    body.style.transition = `0.3s linear`;
+
+function checkGame() {
+  if (!selectedAnswer) {
+    alert("please select one answer");
+  } else {
+    if (correctAnswer == selectedAnswer) {
+      toggleAlert();
+      document.getElementById("alertImage").src = "./image/correct.png";
+      score += 10;
+      setTimeout(() => {
+        makeQuestion('correct');
+      }, 2000)
+    } else {
+      toggleAlert();
+      document.getElementById("alertImage").src = "./image/incorrect.png";
+      setTimeout(() => {
+        makeQuestion('incorrect');
+      }, 2000)
+    }
+  }
+
 }
-const deg = 6;
-const hr = document.querySelector('#hr');
-const mn = document.querySelector('#mn');
-setInterval(() => {
-    let day = new Date();
-    let hh = day.getHours() * 30;
-    let mm = day.getMinutes() * deg;
-    hr.style.transform = `rotateZ(${(hh)+(mm/12)}deg)`;
-    mn.style.transform = `rotateZ(${mm}deg)`;
+
+function toggleAlert() {
+  $("#toggle-btn").click();
+  setTimeout(() => {
+    $('#overlay-close').click();
+  }, 2000)
+}
+
+function makeQuestion(resultFlag) {
+  selectedAnswer = 0;
+  correctAnswer = 0;
+
+  currentNum++;
+  if(currentNum == 11){
+    $('.open-modal').click();
+
+    var element = document.getElementById("result");
+    var startValue = score > 0 ? score - 10 : score;
+    var endValue = score;
+    if(endValue < 50) {
+      document.getElementById("result-title").innerHTML = "Ops! Learn more Clock";
+    } else {
+      document.getElementById("result-title").innerHTML = "Congratulation!";
+    }
+    setTimeout(()=>{
+      animateValue(element, startValue, endValue, 800);
+    }, 400);
+    return false;
+  }
+
+  var curNumEl = document.getElementById("currentNum");
+  var scoreEl = document.getElementById("score");
+  curNumEl.innerHTML = currentNum;
+  // const obj = document.getElementById("value");
+  var startValue = score > 0 ? score - 10 : score;
+  var endValue = score;
+  if(resultFlag == 'correct'){
+    animateValue(scoreEl, startValue, endValue, 800);
+  }
+  
+  // scoreEl.innerHTML = score;
+  var hours = Math.floor(Math.random() * 12) + 1;
+  var minutes = Math.floor(Math.random() * 12) + 1;
+
+  currentHour = hours;
+  currentMin = minutes * 5;
+
+  updateClock(hours, minutes * 5);
+  makeAnswerBtn(hours, minutes * 5);
+
+}
+
+function openModalBox() {
+  var modal = $('.modal, #mask');
+  $('.open-modal').on('click', function () {
+    modal.fadeIn(300);
+  });
+  $('.close-modal').on('click', function () {
+    modal.fadeOut(800);
+  });
+}
+
+$(document).ready(function () {
+
+  var hours = Math.floor(Math.random() * 12) + 1;
+  var minutes = Math.floor(Math.random() * 12) + 1;
+
+  currentHour = hours;
+  currentMin = minutes * 5;
+
+  updateClock(hours, minutes * 5);
+  makeAnswerBtn(hours, minutes * 5);
+
+  $(function () {
+    var $overlay = $('.overlay'),
+      $overlayTrigger = $('.overlay-trigger button'),
+      $overlayClose = $('#overlay-close'),
+      openClass = 'is-open';
+
+    $overlayTrigger.on('click', function () {
+      var num = ('0' + ($(this).index() + 1)).slice(-2);
+      $('.overlay' + num).addClass(openClass);
+      $overlayClose.addClass(openClass);
+    });
+
+    $overlayClose.on('click', function () {
+      $overlayClose.removeClass(openClass);
+      $overlay.removeClass(openClass);
+    });
+  });
+  openModalBox();
 })
-/*
-This function takes the correctTime and displays the correct minute and hour hand
-*/
-function setClockTime(){
-    // Assuming correctTime is "10:00"
-    hourStr = parseInt(correctTime.substring(0, 2)); // Selects e.g. 10
-    minutes = parseInt(correctTime.substring(3, 5)); // Selects e.g. 00
-    seconds = 0;
-}
 
-function generateRandomTimes(){
-    // returns a list of 4 times
-    //for loop to push each randomly generated time to the array
-    return //the array
-}
-/*
-Randomly generates a number between 0 and 59
-*/
-function generateRandomMinute(){
-    // every 15 minutes: (Math.floor(Math.random() * 60) % 4) * 15
-    minute = Math.floor(Math.random() * 60) % 15;
-    // add a 0 if < 2 digits
-    return minute;
-}
-/*
-Randomly generates a number between 0 and 11
-*/
-function generateRandomHour(){
-    hour = Math.floor(Math.random() * 12);
-    // add a 0 if < 2 digits
-    return hour;
-}
-function generateRandomTime(){
-    hour = generateRandomHour();
-    minute = generateRandomMinute();
-    return `${hour}:${minute}`
-}
+
