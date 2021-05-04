@@ -20,4 +20,17 @@ I personally promote children learning through technology, being able to learn b
 2. Help develop childrens clock telling ability
 3. Creating something fun and educational. 
 4. Creating a tool to help teachers and parents with helping children remember the different times.
-5. Provide a tool that is easily accessible an interactive for children. 
+5. Provide a tool that is easily accessible an interactive for children.
+
+### **_Consumer Objectives_**
+1. Something for children to have fun but be educational with a learning outcome.
+2. Increase parents ability to engage with their childs development.
+3. Accessible game on a vairety of devices.
+4. Encourage fun learning.
+
+### **_Future Goals_** 
+1. Increasing difficulty levels.
+2. Adding audio.
+3. Including words such as past and to.
+4. Fill in the missing times, minutes or hour.
+5. Add a timer, to make it competitive.
