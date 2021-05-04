@@ -113,14 +113,14 @@ function checkGame() {
   } else {
     if (correctAnswer == selectedAnswer) {
       toggleAlert();
-      document.getElementById("alertImage").src = "./image/correct.png";
+      document.getElementById("alertImage").src = "asset/images/clock/correct.png";
       score += 10;
       setTimeout(() => {
         makeQuestion('correct');
       }, 2000)
     } else {
       toggleAlert();
-      document.getElementById("alertImage").src = "./image/incorrect.png";
+      document.getElementById("alertImage").src = "asset/images/clock/incorrect.png";
       setTimeout(() => {
         makeQuestion('incorrect');
       }, 2000)

@@ -1,18 +1,15 @@
 /* --------- Global Style */
 @import url("https://fonts.googleapis.com/css2?family=Sniglet&family=Fredoka+One&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Kanit:900");
 
 body {
-    background-color: white;
+    background-color: #e6bebe;
     font-family: "Sniglet", sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-}
-
-h1, h2{
-    color: #94ebcd
 }
 
 :root {
@@ -198,7 +195,7 @@ h3 span {
   position: relative;
   margin-top: 30px;
   text-align: center;
-  background-image: url('./image/clock-bg.png');
+  background-image: url('../images/clock/clock-bg.png');
   height: 400px;
   width: 400px;
   background-repeat: no-repeat;

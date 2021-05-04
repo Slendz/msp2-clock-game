@@ -4,10 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <title>The Clock Game</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="asset/css/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129353070-1"></script>
-  <script src="./game.js"></script>
+  <script src="asset/js/script.js"></script>
 </head>
 
 <body>
@@ -54,7 +54,7 @@
       </label>
       <!-- -->
       <input class="checkbox-budget" type="radio" name="budget" id="budget-3" onclick="setAnswer(3)">
-      <label class="for-checkbox-budget" for="budget-3" id="budget-3">
+      <label class="for-checkbox-budget" for="budget-3">
         <span data-hover="05:00" id="budget-3-span">05:00</span>
       </label>
       <!--  -->
@@ -78,7 +78,7 @@
 
     <div class="overlay overlay01">
       <div class="overlay-container">
-        <img src="./image/correct.png" id="alertImage" />
+        <img src="asset/images/clock/incorrect.png" id="alertImage" />
       </div>
       <div id="overlay-close"></div>
     </div>
@@ -105,7 +105,7 @@
       <a class="close-modal" href="javascript:void(0)">
         <i class="fa fa-times"></i>
       </a>
-      <div class='modal-content'>
+      <div class="modal-content">
         <h2><span id="result-title">Contratulation!</span></h2>
         <h3><span>Your Score:</span><span class="result" id="result">0</span></h3>
       </div>
