@@ -1,45 +1,16 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# **The Clock Game**
 
-Welcome Slendz,
+![Multiple Devices Mock-Up]( "Multiple Devices Mock-Up")
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+### **_You can check out The Clock Game website_** [here](https://)
 
-## Gitpod Reminders
-
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
-
-`python3 -m http.server`
-
-A blue button should appear to click: *Make Public*,
-
-Another blue button should appear to click: *Open Browser*.
-
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
-
-A blue button should appear to click: *Make Public*,
-
-Another blue button should appear to click: *Open Browser*.
-
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-## Updates Since The Instructional Video
-
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
---------
-
-Happy coding!
+## **_Milestone Project 2 - Interactive Frontend development_**
+---
+## **Project Description**
+This project is an educational clock game created for the purpose of improving children's clock telling abilities. Initial purpose to create an interactive visual understanding of analouge and digital times.
+The clock game was created as an educational tool for children, as i have children of my own learning how to tell the time, so is to assit parents and potentially teachers, to provide an interactive game the is made for learning. 
+The game was made so it is easy to use, access and understand for all from multiple devices and browsers. 
+The game focuses on the difference between analogue and digital clocks being able to tell the difference in time, focusing predominately on ages 6 up. I do have plans to develop it further creating different levels and a varity of different options mixing between text and digits.
+This project incoporates technology with education, its has been designed to be simple fun and engaging quick and easy with expected positive reactions after using it. 
+With Technology being a huge part of society today, including the current pandemic children are often left to engage with technology, so the ability to use technology is getting younger, so being able to use this game from the age of 4 and maybe younge would be great.
+I personally promote children learning through technology, being able to learn but have fun at the same time is crucial to a child's development and understanding/preparations for life.
