@@ -34,3 +34,16 @@ I personally promote children learning through technology, being able to learn b
 3. Including words such as past and to.
 4. Fill in the missing times, minutes or hour.
 5. Add a timer, to make it competitive.
+
+## **UX**
+
+This website has been designed as a fun interactive educational tool for children, to help develop their ability to remember how to tell the time.
+The look and feel is colourful yet simplistic, not overpowering, user-friendly and easy to navigate. 
+
+### **_User Stories_**
+
+- My child like to play games all the time, after school the first thing he grabs is the tablet and I would like if there were more games that was educational and fun.
+
+- The pandemic has proved to be difficult for me as a working single mum, trying to work and educate my children at the same time as keeping them engaged. Having something fun and educational would be helpful to entertain them for a short while.
+
+- Having an accessible game that is available in any enviroment would be advantagous.
