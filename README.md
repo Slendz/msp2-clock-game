@@ -63,3 +63,41 @@ The look and feel is colourful yet simplistic, not overpowering, user-friendly a
 ### **_Workspace_**
 - **GitHub:** - (IDE) Integrated Development Environment
 - **Gitpod:** - Cloud based hosting platform for managing my repositories, tracking changes and storing files.
+
+## **Deployment**
+This project was developed using Gitpod IDE, then pushed to GitHub, where the repository is stored.
+
+### **Project Deployment**
+
+##### **The following steps outline how the project was deployed to GitHub pages:**
+
+1. Logged on to GitHub
+2. Opened the repository 
+3. Clicked on the settings tab on the right-hand side of menu.
+4. Scrolled down the page until I reached the GitHub Pages section.
+5. Under 'source' I selected the branch drop-down menu.
+6. I selected the 'Master' branch and clicked the 'Save' button.
+7. This allowed the site to be published to GitHub pages and url for the site was displayed in a box above the source section.
+8. The deployed version and the development version of this project are the same.
+
+##### **To run the project locally:**
+
+1. Open this link to the Project Repository
+2. Click on the 'Code' button at the top.
+3. From here you can select to either download or clone to a desktop IDE using the url provided.
+
+### **Resources**
+- Code Institute Content
+- Bootstrap Documentation
+- WW3 Schools
+- W3Docs
+- YouTube
+
+### **Acknowledgements**
+I received inspiration for this project from my daughter, during the pandemic I became aware she was struggling to tell the time, but couldn't find anything fun or simple enough for my daughter to learn from when telling time.
+So I thought this is a great opportunity to develop something that will help her as well as my yongest daughter and anybody else that wants their children to engage with a fun learning tool of telling time.
+I would like to thank my neice who came up with the idea (sort of) for this game.
+
+I would like to thank my mentor Reuben, for his continued support and flexibility and also for his professionalism and continued guidence.
+
+I would also like to thank all the Tutors for their support, for silly things that I couldn't problem solve such as an image not showing because of an incorrect path. and guidance.
