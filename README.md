@@ -14,3 +14,10 @@ The game focuses on the difference between analogue and digital clocks being abl
 This project incoporates technology with education, its has been designed to be simple fun and engaging quick and easy with expected positive reactions after using it. 
 With Technology being a huge part of society today, including the current pandemic children are often left to engage with technology, so the ability to use technology is getting younger, so being able to use this game from the age of 4 and maybe younge would be great.
 I personally promote children learning through technology, being able to learn but have fun at the same time is crucial to a child's development and understanding/preparations for life.
+
+### **_Business Objectives_**
+1. Developing children's understanding of the connection between digital and analogue times.
+2. Help develop childrens clock telling ability
+3. Creating something fun and educational. 
+4. Creating a tool to help teachers and parents with helping children remember the different times.
+5. Provide a tool that is easily accessible an interactive for children. 
