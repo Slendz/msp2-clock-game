@@ -1,81 +1,130 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link rel="stylesheet" href="asset//css/style.css" type="text/css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <title>Clock Game</title>
+  <meta charset="UTF-8">
+  <title>The Clock Game</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129353070-1"></script>
+  <script src="./game.js"></script>
 </head>
+
 <body>
-    <!--Question Game Answer Area-->
-    <div class="container">
-        <!--Questions & Score Section-->
-        <div class="container">
-            <div class="row">
-                <div class="col" id="title">
-                        <h1><span class="question-number"> of 10 - </span>Can You Match The Correct Time?</h1>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col" id="score">
-                    <h2 class="score-heading">Score:</h2> 
-                </div>
-            </div>
-        </div>
-        
-        <!--Game Area-->
-        <div class="container">    
-            <div class="row">
-                <div class="col">
-                    <h2 class="heading"><i class="far fa-clock"></i> Select the correct time?</h2>
-                </div>
-            </div>
+  <!-- Welcome Screen start -->
+  <div class="container " id="mainPanel">
+    <div class="welcome-title">
+      <h1>Welcome&nbsp;to&nbsp;Clock&nbsp;Game</h1>
+    </div>
+    <div class="main-btn-container">
+      <button class="skewBtn purple" onclick="start()">Let' Start</button>
+    </div>
+  </div>
+  <!-- Welcome screen End -->
 
-            <!--Where the analogue clock displays (Clock Section)-->
-            <div class="row">
-                <div class="col">
-                    <div class="center">
-                        <div class="clock">
-                            <div class="hour">
-                                <div class="hr" id="hr" style="transform: rotateZ(350deg);">                                    
-                                </div>
-                            </div>
-                            <div class="min">
-                                <div class="mn" id="mn" style="transform: rotateZ(240deg);">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <!-- Game Screen Start -->
+  <div class="game-container hidden " id="gamePanel">
+    <div class="game-header">
+      <div>
+        <h2><span id="currentNum">1</span> of 10&nbsp;&nbsp;</h2>
+      </div>
+      <div>
+        <h2>Can you Match The Correct Time?</h2>
+      </div>
+    </div>
+    <div class="score-container">
+      <h3> <span>Score:</span><span id="score">0</span></h3>
+    </div>
+    <div class="description">
+      <span class="text-longshadow">Select the Correct Time</span>
+    </div>
+    <div class="clock-container">
+      <div class="hour-hand"></div>
+      <div class="minute-hand"></div>
+    </div>
+    <div class="answer-container">
+      <input class="checkbox-budget" type="radio" name="budget" id="budget-1" onclick="setAnswer(1)">
+      <label class="for-checkbox-budget" for="budget-1">
+        <span data-hover="12:00" id="budget-1-span">12:00</span>
+      </label>
+      <!-- -->
+      <input class="checkbox-budget" type="radio" name="budget" id="budget-2" onclick="setAnswer(2)">
+      <label class="for-checkbox-budget" for="budget-2">
+        <span data-hover="03:00" id="budget-2-span">03:00</span>
+      </label>
+      <!-- -->
+      <input class="checkbox-budget" type="radio" name="budget" id="budget-3" onclick="setAnswer(3)">
+      <label class="for-checkbox-budget" for="budget-3" id="budget-3">
+        <span data-hover="05:00" id="budget-3-span">05:00</span>
+      </label>
+      <!--  -->
+      <input class="checkbox-budget" type="radio" name="budget" id="budget-4" onclick="setAnswer(4)" checked>
+      <label class="for-checkbox-budget" for="budget-4">
+        <span data-hover="06:30" id="budget-4-span">06:30</span>
+      </label>
+    </div>
 
-            <!--Where the multiply choice answers are displayed (Answer Section)-->
-            <div class="row answer-area">
-                <div class="col mx-5" id="answers">
-                    <div class="row top-row-option text-justify mx-5 my-5">
-                        <div class="col-6">
-                            <span>A:</span>
-                        </div>
-                        <div class="col-6">
-                            <span>B:</span>
-                        </div>
-                    </div>
-                    <div class="row bottom-row-option text-justify mx-5 my-5">    
-                        <div class="col-6">
-                            <span>C:</span>
-                        </div>
-                        <div class="col-6">
-                            <span>D:</span>
-                        </div>
-                    </div>
-                    <div class=>
-                        <button type="button" class="button">Submit</button>
-                    </div>
-                </div>
-            </div>
-        </div>    
-    </div>    
+    <div class="submitbtn-container">
+      <button class="skewBtn blue" onclick="checkGame()">Submit</button>
+    </div>
+  </div>
+  <!-- Game Screen End -->
+
+  <!-- Game Result model(correct and incorrrect answer view) Start -->
+  <div>
+    <div class="overlay-trigger">
+      <button id="toggle-btn">Overlay #02</button>
+    </div>
+
+    <div class="overlay overlay01">
+      <div class="overlay-container">
+        <img src="./image/correct.png" id="alertImage" />
+      </div>
+      <div id="overlay-close"></div>
+    </div>
+    <div class="overlay overlay02"></div>
+    <div class="overlay overlay03"></div>
+    <div class="overlay overlay04"></div>
+    <div class="overlay overlay05"></div>
+    <div class="overlay overlay06"></div>
+    <div class="overlay overlay07"></div>
+    <div class="overlay overlay08"></div>
+    <div class="overlay overlay09"></div>
+    <div class="overlay overlay10">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <!-- Game Result model(correct and incorrrect answer view) End -->
+
+  <!-- End Game Modal Start -->
+  <div>
+    <div id="mask"></div>
+    <div class="modal">
+      <a class="close-modal" href="javascript:void(0)">
+        <i class="fa fa-times"></i>
+      </a>
+      <div class='modal-content'>
+        <h2><span id="result-title">Contratulation!</span></h2>
+        <h3><span>Your Score:</span><span class="result" id="result">0</span></h3>
+      </div>
+      <div class="end-button-container">
+        <button class="btn-pill end-btn" onclick="restart()">
+          <span>Restart</span>
+        </button>
+        <button class="btn-slide-line end-btn" onclick="endGame()">
+          <span>End</span>
+        </button>
+      </div>
+    </div>
+    <!-- END MODAL BOX -->
+    <span class="open-modal">
+      <i class="fa fa-info-circle"></i>
+    </span>
+  </div>
+  <!-- End Game Modal End -->
+
 </body>
+
 </html>
