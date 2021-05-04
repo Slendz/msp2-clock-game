@@ -47,3 +47,19 @@ The look and feel is colourful yet simplistic, not overpowering, user-friendly a
 - The pandemic has proved to be difficult for me as a working single mum, trying to work and educate my children at the same time as keeping them engaged. Having something fun and educational would be helpful to entertain them for a short while.
 
 - Having an accessible game that is available in any enviroment would be advantagous.
+
+
+## **Technologies Used**
+### **_Languages_**
+- **HTML5:** This was used to create the structure for the main page.
+- **CSS:** This was used to style all elements of the website.
+- **JavaScript:** This was used extensively to create the game section and functionality of the website
+
+### **_Frameworks/Integrations_**
+- **Bootstrap4:** Used for the grid layout for the website and modal dialog box.
+- **Font Awesome:** Used to add icons to my footer and button on the website.
+- **Google Fonts:** Used to select the font styles used on the website for the section headers and body.
+
+### **_Workspace_**
+- **GitHub:** - (IDE) Integrated Development Environment
+- **Gitpod:** - Cloud based hosting platform for managing my repositories, tracking changes and storing files.
